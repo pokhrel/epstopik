@@ -16,4 +16,7 @@ def news_events(request):
         newsevents.append({'title':d.title,'content':d.content}) 
     data = {'count':data.count(),'newsevents':newsevents}
     return HttpResponse(json.dumps(data), content_type='text/plain')
+
+def exercise(request):
+    return HttpResponse('Pending!')
     
