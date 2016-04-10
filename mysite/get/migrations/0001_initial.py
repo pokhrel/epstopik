@@ -11,12 +11,24 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Exercise',
+            fields=[
+                ('id', models.AutoField(auto_created=True, serialize=False, primary_key=True, verbose_name='ID')),
+                ('name_en', models.CharField(max_length=50)),
+                ('name_ne', models.CharField(max_length=50)),
+                ('questions', models.IntegerField()),
+                ('filename', models.FileField(upload_to='')),
+            ],
+        ),
+        migrations.CreateModel(
             name='NewsEvents',
             fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
-                ('title', models.CharField(max_length=100)),
-                ('content', models.CharField(max_length=500)),
-                ('date', models.DateTimeField(verbose_name='pub_date')),
+                ('id', models.AutoField(auto_created=True, serialize=False, primary_key=True, verbose_name='ID')),
+                ('title_en', models.CharField(max_length=100)),
+                ('title_ne', models.CharField(max_length=100)),
+                ('content_en', models.CharField(max_length=500)),
+                ('content_ne', models.CharField(max_length=500)),
+                ('date', models.DateField(verbose_name='pub_date')),
             ],
         ),
     ]
